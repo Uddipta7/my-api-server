@@ -64,15 +64,6 @@ MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/inventory
 PORT=5000
 ```
 
-## 📸 Screenshots
-
-### Light Mode
-![Screenshot 2025-06-20 094514](https://github.com/user-attachments/assets/60ca13b7-a21b-410a-9e45-896b45a8b576)
-
-###  Dark Mode
-![image](https://github.com/user-attachments/assets/b91e32bf-09a4-4491-ace8-7608b93b7f40)
-
-
 ## 🚀 How to Run This Project Locally
 1️⃣ Clone the Repository
 ```bash
