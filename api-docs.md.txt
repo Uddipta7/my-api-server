@@ -1,0 +1,141 @@
+# 📦 Inventory Manager – API Documentation
+
+Base URL: `http://localhost:5000/api/items`
+
+---
+
+## 🔍 1. Get All Items
+
+**Method:** `GET`
+**Endpoint:** `/api/items`
+
+**Description:** Retrieves all inventory items.
+
+**Sample Response:**
+
+```json
+[
+  {
+    "_id": "6652a6a0d38fdc4d9cfe13b2",
+    "name": "Apple iPhone 15",
+    "quantity": 10,
+    "createdAt": "2024-06-01T12:00:00.000Z"
+  },
+  {
+    "_id": "6652a6a0d38fdc4d9cfe13b3",
+    "name": "Logitech Mouse",
+    "quantity": 25,
+    "createdAt": "2024-06-01T12:01:00.000Z"
+  }
+]
+```
+
+---
+
+## ➕ 2. Add New Item
+
+**Method:** `POST`
+**Endpoint:** `/api/items`
+
+**Description:** Adds a new item to the inventory.
+
+**Request Body:**
+
+```json
+{
+  "name": "Dell Laptop",
+  "quantity": 15
+}
+```
+
+**Sample Response:**
+
+```json
+{
+  "_id": "6652a6a0d38fdc4d9cfe13b4",
+  "name": "Dell Laptop",
+  "quantity": 15,
+  "createdAt": "2024-06-01T12:02:00.000Z"
+}
+```
+
+---
+
+## ✏️ 3. Update Item
+
+**Method:** `PUT`
+**Endpoint:** `/api/items/:id`
+
+**Description:** Updates an existing item's details.
+
+**Request Params:**
+
+* `id`: The ID of the item to update
+
+**Request Body:**
+
+```json
+{
+  "name": "HP Laptop",
+  "quantity": 20
+}
+```
+
+**Sample Response:**
+
+```json
+{
+  "message": "Item updated successfully."
+}
+```
+
+---
+
+## 🗑️ 4. Delete Item
+
+**Method:** `DELETE`
+**Endpoint:** `/api/items/:id`
+
+**Description:** Deletes an item from the inventory.
+
+**Request Params:**
+
+* `id`: The ID of the item to delete
+
+**Sample Response:**
+
+```json
+{
+  "message": "Item deleted successfully."
+}
+```
+
+---
+
+## 🔁 Notes
+
+* All timestamps are in ISO 8601 format.
+* All responses follow a JSON structure.
+* Ensure the server is running on port 5000 locally (`localhost:5000`).
+
+---
+
+## 🧪 Quick Test with CURL
+
+```bash
+# Get all items
+curl http://localhost:5000/api/items
+
+# Add an item
+curl -X POST http://localhost:5000/api/items -H "Content-Type: application/json" -d "{\"name\":\"Keyboard\",\"quantity\":5}"
+
+# Update an item
+curl -X PUT http://localhost:5000/api/items/ITEM_ID -H "Content-Type: application/json" -d "{\"name\":\"Updated Name\",\"quantity\":10}"
+
+# Delete an item
+curl -X DELETE http://localhost:5000/api/items/ITEM_ID
+```
+
+---
+
+

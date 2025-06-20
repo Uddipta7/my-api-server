@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory Manager</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillatoasts@1.2.0/vanillatoasts.min.css" />
+</head>
+<body>
+  <div class="container" id="app">
+    <div class="header">
+      <h1>📦 Inventory Manager</h1>
+      <button class="icon-toggle" id="toggleDark" title="Toggle Dark Mode">🌙</button>
+    </div>
+
+    <!-- Full-width Search Bar with spacing -->
+    <div class="search-container">
+      <input type="text" id="search" class="search-bar" placeholder="Search items..." />
+    </div>
+
+    <div class="summary">
+      <p id="totalItems">Total Items: 0</p>
+      <p id="totalQuantity">Total Quantity: 0</p>
+    </div>
+
+    <div class="button-group">
+      <button id="exportCSV">📁 Export CSV</button>
+      <label class="upload-btn">
+        📥 Import CSV/Excel
+        <input type="file" id="importFile" accept=".csv,.xlsx" style="display: none;"/>
+      </label>
+    </div>
+
+    <form class="form" id="itemForm">
+      <input type="text" id="itemName" placeholder="Item Name" required />
+      <input type="number" id="itemQuantity" placeholder="Quantity" required />
+      <button type="submit" id="submitBtn">Add Item</button>
+    </form>
+
+    <ul class="item-list" id="itemList"></ul>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="confirmModal" style="display: none;">
+    <div class="modal-content">
+      <p>Are you sure you want to delete this item?</p>
+      <button id="confirmDelete">Yes</button>
+      <button onclick="hideModal()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- JS Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanillatoasts@1.2.0/vanillatoasts.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# === Node.js backend ===
+node_modules/
+.env
+npm-debug.log*
+logs/
+*.log
+pids/
+*.pid
+*.pid.lock
+
+# Build or temp files
+dist/
+build/
+
+# === Frontend ===
+# (If you don't use any bundler, there's not much to ignore)
+frontend/.DS_Store
+frontend/Thumbs.db
+
+# === System & IDE files ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# === OS-specific ===
+*.swp
